@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
+import { Rating } from '../rating';
+import { RatingsService } from '../ratings.service';
 
 @Component({
   selector: 'app-single-rating',
@@ -7,14 +9,15 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./single-rating.component.css']
 })
 export class SingleRatingComponent implements OnInit {
-
+  ratings: Rating[];
   id: number;
+  rating: Rating;
 
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute, private ratingsService: RatingsService) { 
     this.route.params.subscribe( params => this.id = params.id );
   }
 
   ngOnInit() {
+    this.ratingsService.getAllRatings().then(ratings => {this.rating = ratings.find(r => r.id == this.id)})
   }
-
 }

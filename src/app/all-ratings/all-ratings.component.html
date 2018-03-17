@@ -2,34 +2,20 @@
   all-ratings works!
 </p>
 <mat-accordion>
-  <mat-expansion-panel>
+  <mat-expansion-panel *ngFor="let rating of ratings">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        Personal data
+        {{rating.company_name}}
       </mat-panel-title>
       <mat-panel-description>
-        Type your name and age
+        Current rating: {{rating.rating}}
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <mat-form-field>
-      <input matInput placeholder="First name">
-    </mat-form-field>
-
-    <mat-form-field>
-      <input matInput placeholder="Age">
-    </mat-form-field>
-  </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Self aware panel
-      </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{panelOpenState ? 'open' : 'closed'}}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
+    <a routerLink="{{rating.id}}">
+      <button mat-raised-button>
+        Explore rating of {{rating.company_name}}
+      </button>
+    </a>
   </mat-expansion-panel>
 </mat-accordion>
