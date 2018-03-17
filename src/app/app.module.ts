@@ -7,23 +7,26 @@ import {MatButtonModule, MatCheckboxModule, MatExpansionModule, MatFormFieldModu
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { SingleRatingComponent } from './single-rating/single-rating.component';
-import { AllRatingsComponent } from './all-ratings/all-ratings.component';
+import { CreateLoanComponent } from './create-loan/create-loan.component';
+import { AllLoansComponent } from './all-loans/all-loans.component';
+import { VoteLoanComponent } from './vote-loan/vote-loan.component';
 
-import { Rating } from './rating';
+import { Loan } from './loan';
 
-import { RatingsService } from './ratings.service'
+import { LoansService } from './loans.service';
 
 const appRoutes: Routes = [
-  { path: ':id', component: SingleRatingComponent },
-  { path: '**', component: AllRatingsComponent }
+  { path: 'create', component: CreateLoanComponent },
+  { path: 'vote/:id', component: VoteLoanComponent},
+  { path: '**', component: AllLoansComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    SingleRatingComponent,
-    AllRatingsComponent
+    CreateLoanComponent,
+    AllLoansComponent,
+    VoteLoanComponent
   ],
   imports: [
     HttpModule,
@@ -38,7 +41,7 @@ const appRoutes: Routes = [
       appRoutes
     )
   ],
-  providers: [RatingsService],
+  providers: [LoansService],
   bootstrap: [AppComponent]
 })
 

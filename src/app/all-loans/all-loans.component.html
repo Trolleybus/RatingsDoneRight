@@ -1,20 +1,20 @@
 <p>
-  all-ratings works!
+  all-loans works!
 </p>
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let rating of ratings">
+  <mat-expansion-panel *ngFor="let loan of loans">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{rating.company_name}}
+        {{loan.title}}
       </mat-panel-title>
       <mat-panel-description>
-        Current rating: {{rating.rating}}
+        Current rating: {{loan.amount}}
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <a routerLink="{{rating.id}}">
+    <a routerLink="/vote/{{loan.id}}">
       <button mat-raised-button>
-        Explore rating of {{rating.company_name}}
+        Explore rating of {{loan.title}}
       </button>
     </a>
   </mat-expansion-panel>
