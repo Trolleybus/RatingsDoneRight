@@ -8,8 +8,10 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SingleRatingComponent implements OnInit {
 
+  id: number;
+
   constructor(private route: ActivatedRoute) { 
-    this.route.params.subscribe( params => console.log(params) );
+    this.route.params.subscribe( params => this.id = params.id );
   }
 
   ngOnInit() {
