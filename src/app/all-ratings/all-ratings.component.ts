@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-ratings.component.css']
 })
 export class AllRatingsComponent implements OnInit {
-
+  panelOpenState: boolean = false;
   constructor() { }
 
   ngOnInit() {

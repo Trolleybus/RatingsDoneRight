@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import {MatButtonModule, MatCheckboxModule, MatExpansionModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
 import { SingleRatingComponent } from './single-rating/single-rating.component';
 import { AllRatingsComponent } from './all-ratings/all-ratings.component';
@@ -19,6 +22,12 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
