@@ -7,19 +7,14 @@
       <mat-panel-description>
         Current rating: {{loan.amount}}
       </mat-panel-description>
-      <div *ngIf="loan.isApproved == true">
-          Approved 
-      </div>
-      <div *ngIf="loan.isApproved == false">
-          Not Approved
-      </div>
     </mat-expansion-panel-header>
 
-    <a routerLink="/vote/{{loan.id}}">
-      <button mat-raised-button>
-        Explore rating of {{loan.title}}
-      </button>
-    </a>
+    <div *ngIf="loan.isApproved == true">
+        Approved 
+    </div>
+    <div *ngIf="loan.isApproved == false">
+        Not Approved
+    </div>
 
   </mat-expansion-panel>
 </mat-accordion>

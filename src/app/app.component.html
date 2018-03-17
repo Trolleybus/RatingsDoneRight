@@ -1,8 +1,24 @@
 <mat-toolbar color="primary">
   <div class="centered">
-      <span routerLink="/vote" routerLinkActive="active">Vote on Loans</span>
-      <span routerLink="/create" routerLinkActive="active">Create Loan Request</span>
-      <span routerLink="/" routerLinkActive="active">Loans</span>
+    <span>Pool Invest</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon class="menu-icon">more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/vote" routerLinkActive="active">
+            <mat-icon>start_rate</mat-icon>
+            <span>Vote on Loans</span>
+          </button>
+          <button mat-menu-item routerLink="/" routerLinkActive="active">
+            <mat-icon>reorder</mat-icon>
+            <span>All Loans</span>
+          </button>
+          <button mat-menu-item routerLink="/create" routerLinkActive="active">
+            <mat-icon>create</mat-icon>
+            <span>Create new Loan</span>
+          </button>
+        </mat-menu>
   </div>
 </mat-toolbar>
 

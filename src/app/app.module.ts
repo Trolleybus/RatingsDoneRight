@@ -10,10 +10,13 @@ import {
   MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
-  MatIconModule,
   MatToolbarModule,
-  MatButtonToggleModule
+  MatButtonToggleModule,
+  MatMenuModule,
+  MatChipsModule
 } from '@angular/material';
+import { MatIconModule } from '@angular/material/icon';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -47,9 +50,11 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatChipsModule,
     MatToolbarModule,
     MatButtonToggleModule,
     MatIconModule,
+    MatMenuModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes
