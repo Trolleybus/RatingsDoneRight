@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from "@angular/router";
 import { LoansService } from '../loans.service';
+import { Loan } from '../loan';
 
 @Component({
   selector: 'app-vote-loan',
@@ -9,13 +10,21 @@ import { LoansService } from '../loans.service';
   styleUrls: ['./vote-loan.component.css']
 })
 export class VoteLoanComponent implements OnInit {
-  id: number;
+  loans: Loan[] = [];
 
-  constructor(private route: ActivatedRoute, private loansService: LoansService) { 
-    this.route.params.subscribe( params => this.id = Number.parseInt(params['id']) );
-  }
+  constructor(private loansService: LoansService) { }
 
   ngOnInit() {
+    this.loans = this.loansService.getLoansToApprove();
   }
 
+  public approveLoan(event, id: number): void {
+    this.loansService.setApprovalStatus(id, true);
+    this.loans = this.loansService.getLoansToApprove();
+  }
+
+  public disapproveLoan(event, id: number): void {
+    this.loansService.setApprovalStatus(id, false);
+    this.loans = this.loansService.getLoansToApprove();
+  }
 }

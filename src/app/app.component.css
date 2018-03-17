@@ -1,0 +1,11 @@
+.centered {
+    position: fixed; /* or absolute */
+    left: 50%;
+    width: 900px;
+    transform: translate(-50%, 5%);
+}
+
+.top-nav {
+    height: 40px;
+    background: blue;
+}

@@ -13,5 +13,4 @@ export class CreateLoanComponent implements OnInit {
   constructor(private loansService: LoansService) { }
 
   ngOnInit() { }
-
 }

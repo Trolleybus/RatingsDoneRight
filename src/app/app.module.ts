@@ -3,7 +3,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
-import {MatButtonModule, MatCheckboxModule, MatExpansionModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {
+  MatCardModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatInputModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -17,7 +24,7 @@ import { LoansService } from './loans.service';
 
 const appRoutes: Routes = [
   { path: 'create', component: CreateLoanComponent },
-  { path: 'vote/:id', component: VoteLoanComponent},
+  { path: 'vote', component: VoteLoanComponent},
   { path: '**', component: AllLoansComponent }
 ];
 
@@ -36,6 +43,7 @@ const appRoutes: Routes = [
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes
