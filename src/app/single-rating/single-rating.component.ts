@@ -18,6 +18,6 @@ export class SingleRatingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.ratingsService.getAllRatings().then(ratings => {this.rating = ratings.find(r => r.id == this.id)})
+    this.ratingsService.getAllRatings().then(ratings => {this.rating = ratings.filter(r => r.id == this.id)[0]})
   }
 }
