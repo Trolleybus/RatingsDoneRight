@@ -13,7 +13,6 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <button mat-raised-button color="primary" (click)="approveLoan($event, loan.id)">Approve</button>
-      <button mat-raised-button color="accent">Disapprove</button>
-
+      <button mat-raised-button color="accent" (click)="disapproveLoan($event, loan.id)">Disapprove</button>
     </mat-expansion-panel>
   </mat-accordion>

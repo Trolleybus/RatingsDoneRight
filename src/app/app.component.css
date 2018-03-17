@@ -1,11 +1,7 @@
 .centered {
     position: fixed; /* or absolute */
     left: 50%;
-    width: 900px;
+    max-width: 900px;
+    width: 100%;
     transform: translate(-50%, 5%);
-}
-
-.top-nav {
-    height: 40px;
-    background: blue;
 }

@@ -9,7 +9,10 @@ import {
   MatCheckboxModule,
   MatExpansionModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatButtonToggleModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -44,6 +47,9 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatToolbarModule,
+    MatButtonToggleModule,
+    MatIconModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(
       appRoutes

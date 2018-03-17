@@ -1,8 +1,11 @@
-<nav class="top-nav">
-  <a routerLink="/vote" routerLinkActive="active">Vote on Loans</a>
-  <a routerLink="/create" routerLinkActive="active">Create Loan Request</a>
-  <a routerLink="/" routerLinkActive="active">Loans</a>
-</nav>
+<mat-toolbar color="primary">
+  <div class="centered">
+      <span routerLink="/vote" routerLinkActive="active">Vote on Loans</span>
+      <span routerLink="/create" routerLinkActive="active">Create Loan Request</span>
+      <span routerLink="/" routerLinkActive="active">Loans</span>
+  </div>
+</mat-toolbar>
+
 <div class="centered">
     <router-outlet ></router-outlet>
 </div>
