@@ -1,11 +1,13 @@
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let loan of loans">
+  <mat-expansion-panel *ngFor="let loan of loans" >
     <mat-expansion-panel-header>
       <mat-panel-title>
+        <mat-icon *ngIf="loan.isApproved == true" >thumb_up</mat-icon>
+        <mat-icon *ngIf="loan.isApproved == false" >thumb_down</mat-icon>
         {{loan.title}}
       </mat-panel-title>
       <mat-panel-description>
-        Current rating: {{loan.amount}}
+        Current rating: {{getFormattedAmount(loan.amount)}}
       </mat-panel-description>
     </mat-expansion-panel-header>
 

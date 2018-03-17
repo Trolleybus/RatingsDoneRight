@@ -27,4 +27,8 @@ export class VoteLoanComponent implements OnInit {
     this.loansService.setApprovalStatus(id, false);
     this.loans = this.loansService.getLoansToApprove();
   }
+
+  public getFormattedAmount(amount: number): string {
+    return amount.toLocaleString('de-CH');
+  }
 }

@@ -35,7 +35,7 @@ export class LoansService {
     return this.loans.filter(loan => loan.isVoted == false);
   }
 
-  private createLoan( title: string, amount: number, isApproved, isVoted): Loan {
+  public createLoan( title: string, amount: number, isApproved, isVoted): Loan {
     let loan = new Loan();
     loan.id = this.loans.length + 1;
     loan.title = title;

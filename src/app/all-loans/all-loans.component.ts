@@ -20,4 +20,7 @@ export class AllLoansComponent implements OnInit {
     this.loans = this.loansService.getAllLoans();
   }
 
+  public getFormattedAmount(amount: number): string {
+    return amount.toLocaleString('de-CH');
+  }
 }

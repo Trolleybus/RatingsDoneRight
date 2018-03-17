@@ -8,7 +8,7 @@
           {{loan.title}}
         </mat-panel-title>
         <mat-panel-description>
-          Current rating: {{loan.amount}}
+          Amount: {{getFormattedAmount(loan.amount)}}
         </mat-panel-description>
       </mat-expansion-panel-header>
       <button mat-raised-button color="primary" (click)="approveLoan($event, loan.id)">Approve</button>

@@ -1,9 +1,14 @@
 .centered {
-    position: fixed; /* or absolute */
+    position: absolute; /* or absolute */
     left: 50%;
     max-width: 900px;
     width: 100%;
     transform: translate(-50%, 5%);
+}
+
+.nav {
+    height: 40px;
+    background-color: green;
 }
 
 .menu-icon {
