@@ -17,7 +17,7 @@ export class AllRatingsComponent implements OnInit {
   constructor( private ratingsService: RatingsService ) { }
 
   ngOnInit() {
-    this.ratingsService.getAllRatings().then(companies => this.ratings = companies);
+    this.ratings = this.ratingsService.getAllRatings();
   }
 
 }

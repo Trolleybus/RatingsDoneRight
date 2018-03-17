@@ -9,15 +9,15 @@ import { RatingsService } from '../ratings.service';
   styleUrls: ['./single-rating.component.css']
 })
 export class SingleRatingComponent implements OnInit {
-  ratings: Rating[];
   id: number;
   rating: Rating;
 
   constructor(private route: ActivatedRoute, private ratingsService: RatingsService) { 
-    this.route.params.subscribe( params => this.id = params.id );
+    this.route.params.subscribe( params => this.id = Number.parseInt(params['id']) );
   }
 
   ngOnInit() {
-    this.ratingsService.getAllRatings().then(ratings => {this.rating = ratings.filter(r => r.id == this.id)[0]})
+    this.rating = this.ratingsService.getRatingById(this.id);
   }
+
 }
