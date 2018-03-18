@@ -4,22 +4,26 @@
   </h1>
 </mat-card>
 <mat-card>
-  <mat-card-header>
-    <mat-card-title>Create new Loan Request</mat-card-title>
-    <mat-card-subtitle>Please fill out the form</mat-card-subtitle>
-  </mat-card-header>
   <mat-card-content>
     <div class="input-container">
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
         very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-
-      </p>
-      <p>
-        // TODO: Create Form and bind to class
       </p>
       <mat-form-field>
-        <textarea matInput placeholder="Loan Description"></textarea>
+        <input matInput placeholder="Titel" [(ngModel)]="title">
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput placeholder="Loan Description" [(ngModel)]="description"></textarea>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Amount" [(ngModel)]="amount">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Interest Rate" [(ngModel)]="interestRate">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="number" placeholder="Period" [(ngModel)]="period">
       </mat-form-field>
     </div>
     Friends:
@@ -31,7 +35,7 @@
     </mat-chip-list>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary">Apply</button>
-    <button mat-raised-button color="accent">Save Draft</button>
+    <button mat-raised-button color="primary"(click)="applyForLoan($event)">Apply</button>
+    <button mat-raised-button color="accent" (click)="saveDraft($event)">Save Draft</button>
   </mat-card-actions>
 </mat-card>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import {
   MatCardModule,
@@ -43,6 +44,7 @@ const appRoutes: Routes = [
     VoteLoanComponent
   ],
   imports: [
+    FormsModule,
     Ng2GoogleChartsModule,
     HttpModule,
     BrowserModule,
