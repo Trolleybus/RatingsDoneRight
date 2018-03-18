@@ -31,4 +31,8 @@ export class VoteLoanComponent implements OnInit {
   public getFormattedAmount(amount: number): string {
     return amount.toLocaleString('de-CH');
   }
+
+  public getFormattedDate(date: Date): string {
+    return date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+  }
 }

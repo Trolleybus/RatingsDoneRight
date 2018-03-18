@@ -21,21 +21,31 @@
         <div class="text-inside-grid">
           <h3>General Information</h3>
           <p>{{loan.description}}</p>
-          <p>Application Date: {{getFormattedDate(loan.applicationDate)}}</p> 
-          <p>Applicant: {{loan.applicant}}</p>
+          <div class="myself">
+            <div class="property">Application Date:</div>
+            <div class="value"> {{getFormattedDate(loan.applicationDate)}}</div>
+            <div class="property">Applicant:</div>
+            <div class="value"> {{loan.applicant}}</div>
+          </div>
         </div>
       </mat-grid-tile>
       <mat-grid-tile [style.border-right]="'1px dashed #ddd'">
         <div class="text-inside-grid">
           <h3>Financial Information</h3>
-          Amount: {{getFormattedAmount(loan.amount)}}
+          <div class="myself">
+            <div class="property">Amount:</div>
+            <div class="value"> {{getFormattedAmount(loan.amount)}}</div>
+            <div class="property">Interest Rate:</div>
+            <div class="value"> {{loan.interestRate}}%</div>
+            <div class="property">Period:</div>
+            <div class="value"> {{loan.period}} years</div>
+          </div>
         </div>
       </mat-grid-tile>
       <mat-grid-tile>
         <div class="text-inside-grid">
           <h3>Voting</h3>
           <google-chart [data]="pieChartData"></google-chart>
-          {{loan.percentNo}} {{loan.percentYes}} {{loan.percentUndecided}}
           <div *ngIf="loan.isApproved == true">
             Approved
           </div>

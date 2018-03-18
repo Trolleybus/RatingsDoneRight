@@ -12,4 +12,5 @@ export class Loan {
     interestRate: number;
     friends: string[];
     description: string;
+    period: number;
 }

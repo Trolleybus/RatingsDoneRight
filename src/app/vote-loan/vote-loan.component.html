@@ -9,11 +9,36 @@
       <mat-panel-title>
         {{loan.title}}
       </mat-panel-title>
-      <mat-panel-description>
-        Amount: {{getFormattedAmount(loan.amount)}}
-      </mat-panel-description>
     </mat-expansion-panel-header>
+    <mat-grid-list cols="4" rows="1">
+      <mat-grid-tile [style.border-right]="'1px dashed #ddd'" [colspan]="2" [rowspan]="1">
+        <div class="text-inside-grid">
+          <h3>General Information</h3>
+          <p>{{loan.description}}</p>
+          <div class="myself">
+            <div class="property">Application Date:</div>
+            <div class="value"> {{getFormattedDate(loan.applicationDate)}}</div>
+            <div class="property">Applicant:</div>
+            <div class="value"> {{loan.applicant}}</div>
+          </div>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile [style.border-right]="'1px dashed #ddd'" [colspan]="2" [rowspan]="1">
+        <div class="text-inside-grid">
+          <h3>Financial Information</h3>
+          <div class="myself">
+            <div class="property">Amount:</div>
+            <div class="value"> {{getFormattedAmount(loan.amount)}}</div>
+            <div class="property">Interest Rate:</div>
+            <div class="value"> {{loan.interestRate}}%</div>
+            <div class="property">Period:</div>
+            <div class="value"> {{loan.period}} years</div>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
     <button mat-raised-button color="primary" (click)="approveLoan($event, loan.id)">Approve</button>
     <button mat-raised-button color="accent" (click)="disapproveLoan($event, loan.id)">Disapprove</button>
+
   </mat-expansion-panel>
 </mat-accordion>

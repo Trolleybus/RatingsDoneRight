@@ -7,12 +7,12 @@ export class LoansService {
   
   
   constructor() {
-    this.loans.push(this.createLoan('Reg Dogs Company', 10000, false, false, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
-    this.loans.push(this.createLoan('ABB', 90000, false, false, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
-    this.loans.push(this.createLoan('Balois', 90000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
-    this.loans.push(this.createLoan('SIX', 80000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
-    this.loans.push(this.createLoan('Swisscom', 98000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
-    this.loans.push(this.createLoan('Swiss', 8900000, false, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
+    this.loans.push(this.createLoan('Reg Dogs Company', 10000, false, false, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Descriptionn with loads of text. So this guy is going BIG!",2));
+    this.loans.push(this.createLoan('ABB', 90000, false, false, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description",6));
+    this.loans.push(this.createLoan('Balois', 90000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description",8));
+    this.loans.push(this.createLoan('SIX', 80000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description",1));
+    this.loans.push(this.createLoan('Swisscom', 98000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description",2));
+    this.loans.push(this.createLoan('Swiss', 8900000, false, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description",1));
   }
 
   public getLoanById(id: number): Loan {
@@ -35,7 +35,7 @@ export class LoansService {
     return this.loans.filter(loan => loan.isVoted == false);
   }
 
-  public createLoan( title, amount, isApproved, isVoted, applicationDate, applicant, percentYes, percentNo, percentUndecided, interestRate, friends, description): Loan {
+  public createLoan( title, amount, isApproved, isVoted, applicationDate, applicant, percentYes, percentNo, percentUndecided, interestRate, friends, description, period ): Loan {
     let loan = new Loan();
     loan.id = this.loans.length + 1;
     loan.title = title;
@@ -50,6 +50,7 @@ export class LoansService {
     loan.interestRate = interestRate;
     loan.friends = friends;
     loan.description = description;
+    loan.period = period;
     return loan;
   }
 }

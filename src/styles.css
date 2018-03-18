@@ -4,3 +4,25 @@
 .background {
     background: linear-gradient(-90deg, red, yellow);
 }
+
+.text-inside-grid {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 10px;
+}
+
+.myself .property {
+    width: 45%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.myself .value {
+    text-align: left;
+    padding-left: 10px;
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+}
