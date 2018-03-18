@@ -4,3 +4,6 @@
 .background {
     background: linear-gradient(-90deg, red, yellow);
 }
+.grid-test-1 > figure.mat-figure {
+    justify-content: flex-start !important;
+  }

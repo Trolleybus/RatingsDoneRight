@@ -7,12 +7,12 @@ export class LoansService {
   
   
   constructor() {
-    this.loans.push(this.createLoan('Reg Dogs Company', 10000, false, false));
-    this.loans.push(this.createLoan('ABB', 90000, false, false));
-    this.loans.push(this.createLoan('Balois', 90000, true, true));
-    this.loans.push(this.createLoan('SIX', 80000, true, true));
-    this.loans.push(this.createLoan('Swisscom', 98000, true, true));
-    this.loans.push(this.createLoan('Swiss', 8900000, false, true));
+    this.loans.push(this.createLoan('Reg Dogs Company', 10000, false, false, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
+    this.loans.push(this.createLoan('ABB', 90000, false, false, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
+    this.loans.push(this.createLoan('Balois', 90000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
+    this.loans.push(this.createLoan('SIX', 80000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
+    this.loans.push(this.createLoan('Swisscom', 98000, true, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
+    this.loans.push(this.createLoan('Swiss', 8900000, false, true, new Date(), "Urs Heini", 51, 49, 0, 1.5, [], "Some Random Description"));
   }
 
   public getLoanById(id: number): Loan {
@@ -35,13 +35,21 @@ export class LoansService {
     return this.loans.filter(loan => loan.isVoted == false);
   }
 
-  public createLoan( title: string, amount: number, isApproved, isVoted): Loan {
+  public createLoan( title, amount, isApproved, isVoted, applicationDate, applicant, percentYes, percentNo, percentUndecided, interestRate, friends, description): Loan {
     let loan = new Loan();
     loan.id = this.loans.length + 1;
     loan.title = title;
     loan.amount = amount;
     loan.isApproved = isApproved;
     loan.isVoted = isVoted;
+    loan.applicationDate = applicationDate;
+    loan.applicant = applicant;
+    loan.percentYes = percentYes;
+    loan.percentNo = percentNo;
+    loan.percentUndecided = percentUndecided;
+    loan.interestRate = interestRate;
+    loan.friends = friends;
+    loan.description = description;
     return loan;
   }
 }

@@ -1,22 +1,38 @@
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let loan of loans" >
+  <mat-expansion-panel *ngFor="let loan of loans">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <mat-icon *ngIf="loan.isApproved == true" >thumb_up</mat-icon>
-        <mat-icon *ngIf="loan.isApproved == false" >thumb_down</mat-icon>
+        <mat-icon *ngIf="loan.isApproved == true && loan.isVoted == true">thumb_up</mat-icon>
+        <mat-icon *ngIf="loan.isApproved == false && loan.isVoted == true">thumb_down</mat-icon>
+        <mat-icon *ngIf="loan.isVoted == false">settings_backup_restore</mat-icon>
         {{loan.title}}
       </mat-panel-title>
       <mat-panel-description>
-        Current rating: {{getFormattedAmount(loan.amount)}}
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <div *ngIf="loan.isApproved == true">
-        Approved 
-    </div>
-    <div *ngIf="loan.isApproved == false">
-        Not Approved
-    </div>
-
+    <mat-grid-list cols="3">
+      <mat-grid-tile [style.border-right]="'1px dashed #ddd'" class="grid-test-1">
+        Application Date: {{getFormattedDate(loan.applicationDate)}}
+        Applicant: {{loan.applicant}}
+      </mat-grid-tile>
+      <mat-grid-tile [style.border-right]="'1px dashed #ddd'">
+          <h3>Financial Information</h3>
+          Amount: {{getFormattedAmount(loan.amount)}}
+      </mat-grid-tile>
+      <mat-grid-tile class="grid-test-1">
+        <h3>Voting</h3>
+        <google-chart [data]="pieChartData"></google-chart>
+          {{loan.percentNo}}
+          {{loan.percentYes}}
+          {{loan.percentUndecided}}
+        <div *ngIf="loan.isApproved == true">
+          Approved
+        </div>
+        <div *ngIf="loan.isApproved == false">
+          Not Approved
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-expansion-panel>
 </mat-accordion>

@@ -13,7 +13,8 @@ import {
   MatToolbarModule,
   MatButtonToggleModule,
   MatMenuModule,
-  MatChipsModule
+  MatChipsModule,
+  MatGridListModule
 } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -23,7 +24,7 @@ import { AppComponent } from './app.component';
 import { CreateLoanComponent } from './create-loan/create-loan.component';
 import { AllLoansComponent } from './all-loans/all-loans.component';
 import { VoteLoanComponent } from './vote-loan/vote-loan.component';
-
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 import { Loan } from './loan';
 
 import { LoansService } from './loans.service';
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     VoteLoanComponent
   ],
   imports: [
+    Ng2GoogleChartsModule,
     HttpModule,
     BrowserModule,
     MatButtonModule,
@@ -56,6 +58,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatMenuModule,
     BrowserAnimationsModule,
+    MatGridListModule,
     RouterModule.forRoot(
       appRoutes
     )
