@@ -27,7 +27,7 @@ export class CreateLoanComponent implements OnInit {
     this.period = this.draft.period;
   }
 
-  public saveDraft(): void {
+  public saveDraft(event): void {
     this.draft.title = this.title;
     this.draft.description = this.description;
     this.draft.amount = this.amount;
