@@ -46,11 +46,14 @@
         <div class="text-inside-grid">
           <h3>Voting</h3>
           <google-chart [data]="pieChartData"></google-chart>
-          <div *ngIf="loan.isApproved == true">
+          <div *ngIf="loan.isApproved == true && loan.isVoted == true">
             Approved
           </div>
-          <div *ngIf="loan.isApproved == false">
+          <div *ngIf="loan.isApproved == false && loan.isVoted == true">
             Not Approved
+          </div>
+          <div *ngIf="loan.isVoted == false">
+            Voting still in progress
           </div>
         </div>
       </mat-grid-tile>
